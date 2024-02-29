@@ -12,8 +12,10 @@ def more(text):
                 break
 
 
-url = 'http://python.org/'  # προσδιορισμός του url
+url = input("Enter the url:")  # προσδιορισμός του url
 
+if not url.startswith("http://"):
+    url='http://'+url
 with requests.get(url) as response:  # το αντικείμενο response
     html = response.text
     more(html)
